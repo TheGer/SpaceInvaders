@@ -1,13 +1,44 @@
 #pragma strict
-
 var laser:Rigidbody;
+var health:int=100;
+
+var colours:Material[];
 
 
-function Start () {
+
+function OnTriggerEnter(other:Collider)
+{
+	if(other.gameObject.tag == "alienlaser")
+	{
+		//the aliens hit the player
+		renderer.sharedMaterial = colours[1];
+		health -= 2;
+	}
 
 }
 
+function OnTriggerExit()
+{
+	//reset to green when shot exits
+	renderer.sharedMaterial = colours[0];
+}
+
+function OnGUI()
+{
+	GUI.color = Color.green;
+	GUI.Label(Rect(0,0,100,50),"Health: "+health);
+}
+
+
+
+function Start () {
+	renderer.sharedMaterial = colours[0];
+}
+
 function Update () {
+	//default material
+	
+	
 	if (Input.GetKeyDown(KeyCode.Space))
 	{
 		Instantiate(laser,transform.position,transform.rotation);
