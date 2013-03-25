@@ -45,7 +45,7 @@ function createAliens(rows:int,cols:int)
 function Start () {
 	//this loop will run 5 times
 	//create one row with five aliens
-	createAliens(2,5);
+	createAliens(3,5);
 	
 	for(var counter=0;counter<5;counter++)
 	{
