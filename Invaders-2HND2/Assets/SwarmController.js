@@ -31,7 +31,7 @@ function createAliens(rows:int,cols:int)
 		{
 			var tempAlien:Rigidbody;
 			//create instances of the alien in these positions
-			tempAlien = Instantiate(alien,Vector3(counter*2,transform.position.y+row,1),Quaternion.identity);
+			tempAlien = Instantiate(alien,Vector3(counter*2,transform.position.y-row,1),Quaternion.identity);
 			//the parent of the alien is the swarm
 			tempAlien.transform.parent = this.transform;
 		}
@@ -41,11 +41,10 @@ function createAliens(rows:int,cols:int)
 
 
 
-
 function Start () {
 	//this loop will run 5 times
 	//create one row with five aliens
-	createAliens(3,5);
+	createAliens(GameController.rows,GameController.cols);
 	
 	for(var counter=0;counter<5;counter++)
 	{

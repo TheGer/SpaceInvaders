@@ -46,6 +46,7 @@
   <ItemGroup>
      <Compile Include="Assets\AlienController.js" />
      <Compile Include="Assets\BordersCalculator.js" />
+     <Compile Include="Assets\GameController.js" />
      <Compile Include="Assets\LaserController.js" />
      <Compile Include="Assets\PlayerController.js" />
      <Compile Include="Assets\SwarmController.js" />
