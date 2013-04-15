@@ -34,6 +34,14 @@ function OnTriggerEnter(other:Collider)
 		//laser hits an alien
 		//increment score
 			PlayerController.score++;
+			
+			var PlayerControllerScript:PlayerController;
+			
+			PlayerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent(PlayerController);
+			
+			PlayerControllerScript.PlayAlienExplosion();
+			
+			
 		//destroy the alien
 			Destroy(other.gameObject);
 		//destroy the laser

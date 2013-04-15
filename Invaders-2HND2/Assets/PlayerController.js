@@ -6,6 +6,10 @@ static var score:int=0;
 
 var colours:Material[];
 
+var laserSound:AudioClip;
+
+
+var alienExplosion:AudioClip;
 
 
 function OnTriggerEnter(other:Collider)
@@ -18,6 +22,19 @@ function OnTriggerEnter(other:Collider)
 	}
 
 }
+
+function PlayAlienExplosion()
+{
+	//print("Running alien explosion script");
+	//set the source sound of the default audio source
+		this.GetComponent(AudioSource).clip = alienExplosion;
+		//when I press the space bar, I play the sound
+		this.GetComponent(AudioSource).Play();
+}
+
+
+
+
 
 function OnTriggerExit()
 {
@@ -46,6 +63,11 @@ function Update () {
 	
 	if (Input.GetKeyDown(KeyCode.Space))
 	{
+		//set the source sound of the default audio source
+		this.GetComponent(AudioSource).clip = laserSound;
+		//when I press the space bar, I play the sound
+		this.GetComponent(AudioSource).Play();
+		
 		Instantiate(laser,transform.position,transform.rotation);
 	}
 	

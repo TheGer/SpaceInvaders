@@ -7,9 +7,16 @@ static var cols:int=5;
 
 var levelsPlayed:int=0;
 
-
+function Awake()
+{
+	if(GameObject.FindGameObjectsWithTag("gamecontroller").Length > 1)
+	{
+		Destroy(this);
+	}
+}
 
 function Start () {
+	
 	DontDestroyOnLoad(this);
 }
 
@@ -29,12 +36,21 @@ function Update () {
 		//gameOver=true;
 	}
 	
+	//third level code here
+	if (levelsPlayed == 4)
+	{
+		gameOver=true;
+	
+	}
+	
 	
 	
 }
 
 function OnGUI()
 {
+	GUI.Label(Rect(10,200,300,300),"Level: "+levelsPlayed);
+
 	if (gameOver)
 	{
 		
