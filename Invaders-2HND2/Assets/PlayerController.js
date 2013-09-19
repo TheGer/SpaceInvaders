@@ -49,6 +49,7 @@ function OnGUI()
 	GUI.Label(Rect(0,0,100,50),"Health: "+health);
 	//display the score in the HUD
 	GUI.Label(Rect(0,20,100,50),"Score: "+score);
+	GUI.Label(Rect(0,40,100,50),"Hello");
 }
 
 
